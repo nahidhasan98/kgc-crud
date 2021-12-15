@@ -1,0 +1,231 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: Arial, vrinda, times new roman, sans-serif; */
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #b6b9c8;
+    background-color: #122033;
+}
+
+#header{
+    max-width: 90%;
+    min-height: 15vh;
+    border-bottom: 1px solid #284671;
+}
+
+#container{
+    min-height: 54vh;
+    max-width: 90%;
+    overflow-x: auto;
+}
+
+#tableSection{
+    margin: 20px 0px;
+    min-height: inherit;
+    background: #F8F9FA;
+    overflow-x: auto;
+}
+
+#table th{
+    background-color: #ecf1f8;
+}
+#table td{
+    color: #1b2f4b;
+}
+
+.table>:not(:first-child) {
+    border-top: 0px;
+}
+
+.btnAdd{
+    border: 1px solid #355e97;
+    background: #355e97;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+}
+.btnAdd:hover{
+    background: #1b2f4b;
+}
+.btnCancel{
+    border: 1px solid #d75f70;
+    color: #d75f70;
+    background: #fff;
+}
+.btnCancel:hover{
+    color: #fff;
+    background: #d75f70;
+}
+
+#add{
+    padding: 8px 10px;
+}
+#add,
+#addPlus{
+    background-color: #3598dc;
+    border: none;
+}
+#add:hover,
+#addPlus:hover{
+    background: #2283c3;
+    box-shadow: inset 0 -3px 0px #12496d;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 599px) {
+    #add{
+        display: none;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #addPlus{
+        display: none;
+    }
+}
+
+#loginBtn,
+#logoutBtn{
+    cursor: pointer;
+    border-radius: 2px;
+    padding: 3px 9px;
+    margin-left: 3px;
+    background: #fff;
+    color: #122033;
+    font-weight: bold;
+    border: 1px solid #fff;
+}
+#loginBtn:hover{
+    background: #122033;
+    color: #fff;
+    border: 1px solid #fff;
+}
+#logoutBtn{
+    text-decoration: none;
+    padding: 3px 4px;
+    background: #D75F70;
+    color: #fff;
+    border: 1px solid #D75F70;
+}
+
+#logoutBtn:hover{    
+    background: #122033;
+    color: #D75F70;
+    border: 1px solid #D75F70;
+}
+
+#footer{
+    max-width: 90%;
+    min-height: 15vh;
+    border-top: 1px solid #284671;
+}
+
+/* modal */
+.modal.fade .modal-dialog {
+    transition: -webkit-transform .3s ease-out;
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+    -webkit-transform: translate(0, -50px);
+    transform: translate(0, 0);
+    perspective: 1300px;
+}
+
+.fade .modal-content {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: rotateX(-70deg);
+    -moz-transform: rotateX(-70deg);
+    -ms-transform: rotateX(-70deg);
+    transform: rotateX(-70deg);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    opacity: 0;
+}
+
+.fade.show .modal-content {
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    opacity: 1;
+}
+
+
+/* .modal-dialog {
+    min-width: 60%;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        width: 90%;
+        margin: 1.75rem auto;
+    }
+} */
+
+.modal-close-icon {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+    border-radius: 1000px;
+    background: #d75f70;
+    text-decoration: none;
+    color: #fff;
+    line-height: 119%;
+    font-size: 25px;
+    text-align: center;
+}
+
+.modal-close-icon:hover {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+.modal-close-btn {
+    color: #fff;
+    background: #d75f70;
+    border-color: #d75f70;
+    outline: #d75f70;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:active {
+    background: #d75f70;
+    border-color: #d65c6c;
+}
+
+.modal-close-btn:focus {
+    box-shadow: 0 0 0 0.2rem #d75f704f;
+}
+
+.modal-body,
+.modal-footer {
+    width: 100%;
+}
+
+.modal-title {
+    flex: auto;
+}
+
+.editIcon{
+    min-width: 66px;
+}
+.editIcon img{
+    width: 15px; 
+    cursor: pointer; 
+    opacity: 0.9;
+}
+.avatar{
+    width: 50px;
+}

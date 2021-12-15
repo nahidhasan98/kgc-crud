@@ -1,0 +1,15 @@
+package config
+
+var (
+	databaseName             string
+	databaseConnectionString string
+
+	CookieSecretKey string
+)
+
+func init() {
+	databaseName = "DBName"
+	databaseConnectionString = "DBConnectionString"
+
+	CookieSecretKey = "CookieSecretKey"
+}

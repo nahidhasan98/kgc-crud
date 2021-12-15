@@ -1,0 +1,8 @@
+# for different login credentials
+/config/vault.go
+
+# all exe file
+*.exe
+
+# log files
+/log/*
