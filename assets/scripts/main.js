@@ -136,7 +136,7 @@ function deleteRequest() {
     $('#deleteSubmit').val("Deleting...");
 
     let formData = $('#deleteModal form').serializeArray();
-    console.log(formData);
+    // console.log(formData);
 
     // sending ajax post request
     let request = $.ajax({
@@ -174,7 +174,7 @@ function addRequest() {
     }
 
     let formArray = $('#addModal form').serializeArray();
-    console.log(formArray);
+    // console.log(formArray);
 
     let apiURL = "/api/student";    // add api url
     let apiMethod = "POST";    // add api url
@@ -195,7 +195,7 @@ function addRequest() {
     }
 
     let formData = formArraytoJSON(formArray);  // converting form data to json obj
-    console.log(formData);
+    // console.log(formData);
 
     // sending ajax post request
     let request = $.ajax({
@@ -206,7 +206,7 @@ function addRequest() {
         dataType: 'json',
     });
     request.done(function (response) {
-        console.log(response)
+        // console.log(response)
 
         if (response.status == "error") {
             if (response.type == "name") {
