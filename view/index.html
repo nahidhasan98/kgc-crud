@@ -24,9 +24,9 @@
 <body>
     <div id="header" class="py-3">
         <div class="row">
-            <div class="col" style="max-width: 100px;">
-                <a href="/" style="text-decoration: none;">
-                    <img src="../assets/images/logo.png" alt="" srcset="" style="height: 100px;">
+            <div class="col-4">
+                <a href="/">
+                    <img src="../assets/images/logo.png" alt="" srcset="">
                 </a>
             </div>
             <div class="col text-end pt-3">
@@ -41,7 +41,7 @@
     <div id="container">
         <div id="tableSection">
             <table class="table table-light table-striped text-center mb-0" id="table">
-                <thead style="border-bottom: 1px solid #b4c9e4">
+                <thead>
                     <tr style="border-bottom: 1px solid #d9e4f2;">
                         {{ if not .LoggedIn }}
                         <th colspan="8" class="h3 text-center">Student List</th>
@@ -49,10 +49,8 @@
                         <th colspan="9" class="h3 text-center">Student List</th>
                         {{ end }}
                         <th colspan="1">
-                            <div id="searchBtn" class="btnAdd"
-                                style="padding: 4px 16px; margin-bottom: 2px; max-width: 50px; float: right;">
-                                <img src="../assets/images/search.png" alt="" srcset=""
-                                    style="width: 15px; cursor: pointer; margin-bottom: 2px;">
+                            <div id="searchBtn" class="btnMain">
+                                <img src="../assets/images/search.png" alt="" srcset="">
                             </div>
                         </th>
                     </tr>
@@ -68,46 +66,38 @@
                         <th>Phone</th>
                         <th>Email</th>
                         {{ if .LoggedIn }}
-                        <th>
-                            <img src="../assets/images/admin.png" alt="" srcset="" style="width: 15px;opacity: 0.9;">
+                        <th class="settingIcon">
+                            <img src="../assets/images/admin.png" alt="" srcset="">
                         </th>
                         {{ end }}
                     </tr>
                     <tr id="searchRow" style="display: none;">
                         <th class="py-0">
-                            <div id="sort" class="btnAdd" style="padding: 1px 16px; margin-bottom: 4px;">
-                                <img src="../assets/images/sort.png" alt="" srcset=""
-                                    style="width: 15px; cursor: pointer;">
+                            <div id="sort" class="btnMain">
+                                <img src="../assets/images/sort.png" alt="" srcset="">
                             </div>
                         </th>
                         <th></th>
                         <th class="py-0">
-                            <input type="text" name=""
-                                style="height: 30px; margin: 3px 0px; width: 95%; outline: none; border: 1px solid #d9e4f2; border-radius: 3px; padding: 0px 6px; box-sizing: border-box;">
+                            <input type="text" name="">
                         </th>
                         <th class="py-0">
-                            <input type="text" name=""
-                                style="height: 30px; margin: 3px 0px; width: 95%; outline: none; border: 1px solid #d9e4f2; border-radius: 3px; padding: 0px 6px; box-sizing: border-box;">
+                            <input type="text" name="">
                         </th>
                         <th class="py-0">
-                            <input type="text" name=""
-                                style="height: 30px; margin: 3px 0px; width: 95%; outline: none; border: 1px solid #d9e4f2; border-radius: 3px; padding: 0px 6px; box-sizing: border-box;">
+                            <input type="text" name="">
                         </th>
                         <th class="py-0">
-                            <input type="text" name=""
-                                style="height: 30px; margin: 3px 0px; width: 95%; outline: none; border: 1px solid #d9e4f2; border-radius: 3px; padding: 0px 6px; box-sizing: border-box;">
+                            <input type="text" name="">
                         </th>
                         <th class="py-0">
-                            <input type="text" name=""
-                                style="height: 30px; margin: 3px 0px; width: 95%; outline: none; border: 1px solid #d9e4f2; border-radius: 3px; padding: 0px 6px; box-sizing: border-box;">
+                            <input type="text" name="">
                         </th>
                         <th class="py-0">
-                            <input type="text" name=""
-                                style="height: 30px; margin: 3px 0px; width: 95%; outline: none; border: 1px solid #d9e4f2; border-radius: 3px; padding: 0px 6px; box-sizing: border-box;">
+                            <input type="text" name="">
                         </th>
                         <th class="py-0">
-                            <input type="text" name=""
-                                style="height: 30px; margin: 3px 0px; width: 95%; outline: none; border: 1px solid #d9e4f2; border-radius: 3px; padding: 0px 6px; box-sizing: border-box;">
+                            <input type="text" name="">
                         </th>
                         {{ if .LoggedIn }}
                         <th></th>
@@ -136,9 +126,9 @@
             </table>
             <div>
                 <p class="text-center" id="loadingGif">
-                    <img src="../assets/images/loading.gif" style="height: 230px;">
+                    <img src="../assets/images/loading.gif">
                 </p>
-                <p class="text-center py-2 h5" id="notFound" style="display:none; padding:10px; color: #1b2f4b;">
+                <p class="text-center py-2 h5" id="notFound">
                     Student list is empty!
                 </p>
             </div>
@@ -168,18 +158,18 @@
                 <p>Md. Nahid Hasan</p>
                 <p>
                     <span class="me-2">
-                        <a href="https://github.com/nahidhasan98" style="text-decoration: none;">
-                            <img src="../assets/images/github.png" alt="" srcset="" style="width: 20px;">
+                        <a href="https://github.com/nahidhasan98">
+                            <img src="../assets/images/github.png" alt="" srcset="">
                         </a>
                     </span> |
                     <span class="mx-2">
-                        <a href="https://linkedin.com/in/nahidhasan98" style="text-decoration: none;">
-                            <img src="../assets/images/linkedin.png" alt="" srcset="" style="width: 20px;">
+                        <a href="https://linkedin.com/in/nahidhasan98">
+                            <img src="../assets/images/linkedin.png" alt="" srcset="">
                         </a>
                     </span> |
                     <span class="ms-2">
                         <a href="mailto:mnh.nahid35@gmail.com">
-                            <img src="../assets/images/mail.png" alt="" srcset="" style="width: 20px;">
+                            <img src="../assets/images/mail.png" alt="" srcset="">
                         </a>
                     </span>
                 </p>
@@ -195,7 +185,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content" style="max-width: 80%;">
                     <div class="modal-header mx-3 px-0">
-                        <p class="modal-title h5" id="loginModalLabel" style="color: #424557;">Moderator Login</p>
+                        <p class="modal-title h5" id="loginModalLabel">Moderator Login</p>
                         <span class="modal-close-icon" aria-hidden="true" data-bs-dismiss="modal"
                             aria-label="Close">&times;</span>
                     </div>
@@ -204,21 +194,21 @@
                             <div class="row pb-3">
                                 <div class="form-floating mb-3">
                                     <input type="text" name="username" id="username" class="form-control"
-                                        placeholder="username" style="height: 50px;" required>
-                                    <label for="username" style="padding: 13px 26px; color: #8b8fa7;">Username</label>
-                                    <p class="text-center pt-1 mb-0" style="color: #ff4d4d;" id="errUsername"></p>
+                                        placeholder="username" required>
+                                    <label for="username">Username</label>
+                                    <p class="text-center pt-1 mb-0" id="errUsername"></p>
                                 </div>
                                 <div class="form-floating">
                                     <input type="password" name="password" id="password" class="form-control"
-                                        placeholder="password" style="height: 50px;" required>
-                                    <label for="reg" style="padding: 13px 26px; color: #8b8fa7;">Password</label>
-                                    <p class="text-center pt-1 mb-0" style="color: #ff4d4d;" id="errPassword"></p>
+                                        placeholder="password" required>
+                                    <label for="reg">Password</label>
+                                    <p class="text-center pt-1 mb-0" id="errPassword"></p>
                                 </div>
                             </div>
                             <div class="modal-footer pb-0 pe-0">
                                 <p id="loginMessage"></p>
-                                <button type="button" class="btnAdd btnCancel" data-bs-dismiss="modal">Cancel</button>
-                                <input type="submit" value="Login" id="loginSubmit" class="btnAdd">
+                                <button type="button" class="btnMain btnCancel" data-bs-dismiss="modal">Cancel</button>
+                                <input type="submit" value="Login" id="loginSubmit" class="btnMain">
                             </div>
                         </form>
                     </div>
@@ -230,17 +220,15 @@
 
     {{ if .LoggedIn }}
     <!-- Add Student Button & Modal -->
-    <button id="add" type="button" class="btnAdd" data-bs-toggle="modal" data-bs-target="#addModal"
-        style="position: fixed; right: 8px; bottom: 2vh;">Add</button>
-    <button id="addPlus" type="button" class="btnAdd" data-bs-toggle="modal" data-bs-target="#addModal"
-        style="position: fixed; right: 8px; bottom: 2vh;font-weight: bold;">&plus;</button>
+    <button id="add" type="button" class="btnMain" data-bs-toggle="modal" data-bs-target="#addModal">Add</button>
+    <button id="addPlus" type="button" class="btnMain" data-bs-toggle="modal" data-bs-target="#addModal">&plus;</button>
     <div id="addModalSection">
         <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
             aria-hidden="true" data-bs-backdrop="static" data-keyboard="false">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header mx-3 px-0">
-                        <p class="modal-title h5" id="addModalLabel" style="color: #424557;">Add a Student</p>
+                        <p class="modal-title h5" id="addModalLabel">Add a Student</p>
                         <span class="modal-close-icon" aria-hidden="true" data-bs-dismiss="modal"
                             aria-label="Close">&times;</span>
                     </div>
@@ -250,67 +238,65 @@
                             <div class="row pb-3">
                                 <div class="form-floating col">
                                     <input type="text" name="name" id="name" class="form-control" placeholder="name"
-                                        style="height: 50px;" required>
-                                    <label for="name" style="padding: 13px 26px; color: #8b8fa7;">Name *</label>
-                                    <p class="text-center pt-1 mb-0" style="color: #ff4d4d;" id="errName"></p>
+                                        required>
+                                    <label for="name">Name *</label>
+                                    <p class="text-center pt-1 mb-0" id="errName"></p>
                                 </div>
                                 <div class="form-floating col">
                                     <input type="text" name="session" id="session" class="form-control"
-                                        placeholder="session" style="height: 50px;" required>
-                                    <label for="session" style="padding: 13px 26px; color: #8b8fa7;">Session *</label>
-                                    <p class="text-center pt-1 mb-0" style="color: #ff4d4d;" id="errSession"></p>
+                                        placeholder="session" required>
+                                    <label for="session">Session *</label>
+                                    <p class="text-center pt-1 mb-0" id="errSession"></p>
                                 </div>
                             </div>
                             <div class="row pb-3">
                                 <div class="form-floating col">
                                     <input type="text" name="reg" id="reg" class="form-control" placeholder="reg"
-                                        style="height: 50px;" required>
-                                    <label for="reg" style="padding: 13px 26px; color: #8b8fa7;">
+                                        required>
+                                    <label for="reg">
                                         Registration No. *
                                     </label>
-                                    <p class="text-center pt-1 mb-0" style="color: #ff4d4d;" id="errReg"></p>
+                                    <p class="text-center pt-1 mb-0" id="errReg"></p>
                                 </div>
                                 <div class="form-floating col">
                                     <input type="text" name="roll" id="roll" class="form-control" placeholder="roll"
-                                        style="height: 50px;" required>
-                                    <label for="roll" style="padding: 13px 26px; color: #8b8fa7;">Class Roll *</label>
-                                    <p class="text-center pt-1 mb-0" style="color: #ff4d4d;" id="errRoll"></p>
+                                        required>
+                                    <label for="roll">Class Roll *</label>
+                                    <p class="text-center pt-1 mb-0" id="errRoll"></p>
                                 </div>
                             </div>
                             <div class="row pb-3">
                                 <div class="form-floating col">
                                     <input type="text" name="passingYear" id="passingYear" class="form-control"
-                                        placeholder="passingYear" style="height: 50px;" required>
-                                    <label for="passingYear" style="padding: 13px 26px; color: #8b8fa7;">
+                                        placeholder="passingYear" required>
+                                    <label for="passingYear">
                                         Passing Year *
                                     </label>
-                                    <p class="text-center pt-1 mb-0" style="color: #ff4d4d;" id="errPassingYear"></p>
+                                    <p class="text-center pt-1 mb-0" id="errPassingYear"></p>
                                 </div>
                                 <div class="form-floating col">
-                                    <input type="text" name="phone" id="phone" class="form-control" placeholder="phone"
-                                        style="height: 50px;">
-                                    <label for="phone" style="padding: 13px 26px; color: #8b8fa7;">Phone No.</label>
+                                    <input type="text" name="phone" id="phone" class="form-control" placeholder="phone">
+                                    <label for="phone">Phone No.</label>
                                 </div>
                             </div>
                             <div class="row pb-3">
                                 <div class="form-floating col">
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="email"
-                                        style="height: 50px;">
-                                    <label for="email" style="padding: 13px 26px; color: #8b8fa7;">Email</label>
-                                    <p class="text-center pt-1 mb-0" style="color: #ff4d4d;" id="errEmail"></p>
+                                    <input type="email" name="email" id="email" class="form-control"
+                                        placeholder="email">
+                                    <label for="email">Email</label>
+                                    <p class="text-center pt-1 mb-0" id="errEmail"></p>
                                 </div>
                                 <div class="form-floating col">
                                     <input type="file" name="avatar" id="avatar" class="form-control ps-4"
-                                        placeholder="avatar" style="height: 50px; font-size: 10px;"
-                                        accept="image/png, image/jpeg">
-                                    <label for="avatar" style="padding: 13px 26px; color: #8b8fa7;">Picture</label>
+                                        placeholder="avatar" accept="image/png, image/jpeg">
+                                    <label for="avatar">Picture</label>
                                 </div>
                             </div>
                             <div class="modal-footer pb-0 pe-0">
                                 <p id="addMessage"></p>
-                                <button type="button" id="btnNo" class="btnAdd btnCancel"
+                                <button type="button" id="btnNo" class="btnMain btnCancel"
                                     data-bs-dismiss="modal">Close</button>
-                                <input type="submit" value="Add" id="addSubmit" class="btnAdd">
+                                <input type="submit" value="Add" id="addSubmit" class="btnMain">
                             </div>
                         </form>
                     </div>
@@ -326,7 +312,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content" style="max-width: 80%;">
                     <div class="modal-header mx-3 px-0">
-                        <p class="modal-title h5" id="deleteModalLabel" style="color: #424557;">Delete Student</p>
+                        <p class="modal-title h5" id="deleteModalLabel">Delete Student</p>
                         <span class="modal-close-icon" aria-hidden="true" data-bs-dismiss="modal" aria-label="Close">
                             &times;
                         </span>
@@ -342,8 +328,8 @@
                             </div>
                             <div class="modal-footer pb-0 pe-0">
                                 <p id="deleteMessage"></p>
-                                <button type="button" class="btnAdd btnCancel" data-bs-dismiss="modal">Cancel</button>
-                                <input type="submit" value="Delete" id="deleteSubmit" class="btnAdd">
+                                <button type="button" class="btnMain btnCancel" data-bs-dismiss="modal">Cancel</button>
+                                <input type="submit" value="Delete" id="deleteSubmit" class="btnMain">
                             </div>
                         </form>
                     </div>

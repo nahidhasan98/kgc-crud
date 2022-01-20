@@ -5,7 +5,6 @@
 }
 
 body {
-    /* font-family: Arial, vrinda, times new roman, sans-serif; */
     font-family: 'Ubuntu', sans-serif;
     font-size: 14px;
     line-height: 20px;
@@ -13,37 +12,46 @@ body {
     background-color: #122033;
 }
 
-#header{
+#header {
     max-width: 90%;
     min-height: 15vh;
     border-bottom: 1px solid #284671;
 }
 
-#container{
+#header img {
+    height: 100px;
+}
+
+#container {
     min-height: 54vh;
     max-width: 90%;
     overflow-x: auto;
 }
 
-#tableSection{
+#tableSection {
     margin: 20px 0px;
     min-height: inherit;
     background: #F8F9FA;
     overflow-x: auto;
 }
 
-#table th{
-    background-color: #ecf1f8;
+#table thead {
+    border-bottom: 1px solid #b4c9e4;
 }
-#table td{
-    color: #1b2f4b;
+
+#table th {
+    background-color: #ecf1f8;
 }
 
 .table>:not(:first-child) {
     border-top: 0px;
 }
 
-.btnAdd{
+#table td {
+    color: #1b2f4b;
+}
+
+.btnMain {
     border: 1px solid #355e97;
     background: #355e97;
     padding: 8px 16px;
@@ -51,48 +59,110 @@ body {
     color: #fff;
     font-size: 16px;
 }
-.btnAdd:hover{
+
+.btnMain:hover {
     background: #1b2f4b;
 }
-.btnCancel{
+
+#searchBtn {
+    padding: 4px 16px;
+    margin-bottom: 2px;
+    max-width: 50px;
+    float: right;
+}
+
+#searchBtn img {
+    width: 15px;
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+
+.settingIcon img {
+    width: 15px;
+    opacity: 0.9;
+}
+
+#sort {
+    padding: 1px 16px;
+    margin-bottom: 4px;
+}
+
+#sort img {
+    width: 15px;
+    cursor: pointer;
+}
+
+#searchRow input {
+    height: 30px;
+    margin: 3px 0px;
+    width: 95%;
+    outline: none;
+    border: 1px solid #d9e4f2;
+    border-radius: 3px;
+    padding: 0px 6px;
+    box-sizing: border-box;
+}
+
+#loadingGif img {
+    height: 230px;
+}
+
+#notFound {
+    display: none;
+    padding: 10px;
+    color: #1b2f4b;
+}
+
+.btnCancel {
     border: 1px solid #d75f70;
     color: #d75f70;
     background: #fff;
 }
-.btnCancel:hover{
+
+.btnCancel:hover {
     color: #fff;
     background: #d75f70;
 }
 
-#add{
+#add {
     padding: 8px 10px;
 }
+
+#addPlus {
+    font-weight: bold;
+}
+
 #add,
-#addPlus{
+#addPlus {
     background-color: #3598dc;
     border: none;
+    position: fixed;
+    right: 8px;
+    bottom: 2vh;
 }
+
 #add:hover,
-#addPlus:hover{
+#addPlus:hover {
     background: #2283c3;
     box-shadow: inset 0 -3px 0px #12496d;
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 599px) {
-    #add{
+    #add {
         display: none;
     }
 }
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    #addPlus{
+    #addPlus {
         display: none;
     }
 }
 
 #loginBtn,
-#logoutBtn{
+#logoutBtn {
     cursor: pointer;
     border-radius: 2px;
     padding: 3px 9px;
@@ -102,12 +172,14 @@ body {
     font-weight: bold;
     border: 1px solid #fff;
 }
-#loginBtn:hover{
+
+#loginBtn:hover {
     background: #122033;
     color: #fff;
     border: 1px solid #fff;
 }
-#logoutBtn{
+
+#logoutBtn {
     text-decoration: none;
     padding: 3px 4px;
     background: #D75F70;
@@ -115,16 +187,24 @@ body {
     border: 1px solid #D75F70;
 }
 
-#logoutBtn:hover{    
+#logoutBtn:hover {
     background: #122033;
     color: #D75F70;
     border: 1px solid #D75F70;
 }
 
-#footer{
+#footer {
     max-width: 90%;
     min-height: 15vh;
     border-top: 1px solid #284671;
+}
+
+#footer a {
+    text-decoration: none;
+}
+
+#footer img {
+    width: 20px;
 }
 
 /* modal */
@@ -158,18 +238,6 @@ body {
     transform: rotateX(0deg);
     opacity: 1;
 }
-
-
-/* .modal-dialog {
-    min-width: 60%;
-}
-
-@media (min-width: 576px) {
-    .modal-dialog {
-        width: 90%;
-        margin: 1.75rem auto;
-    }
-} */
 
 .modal-close-icon {
     width: 30px;
@@ -218,14 +286,55 @@ body {
     flex: auto;
 }
 
-.editIcon{
+.editIcon {
     min-width: 66px;
 }
-.editIcon img{
-    width: 15px; 
-    cursor: pointer; 
+
+.editIcon img {
+    width: 15px;
+    cursor: pointer;
     opacity: 0.9;
 }
-.avatar{
+
+.avatar {
     width: 50px;
+}
+
+#avatar {
+    font-size: 10px;
+}
+
+.form-floating label {
+    padding: 13px 26px;
+    color: #8b8fa7;
+}
+
+#username,
+#password,
+#name,
+#session,
+#reg,
+#roll,
+#passingYear,
+#phone,
+#email,
+#avatar {
+    height: 50px;
+}
+
+#errUsername,
+#errPassword,
+#errName,
+#errSession,
+#errReg,
+#errRoll,
+#errPassingYear,
+#errEmail {
+    color: #ff4d4d;
+}
+
+#loginModalLabel,
+#addModalLabel,
+#deleteModalLabel {
+    color: #424557;
 }
