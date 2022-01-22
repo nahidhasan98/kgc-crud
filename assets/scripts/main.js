@@ -23,30 +23,7 @@ $(document).ready(function () {
     });
 
     // error field clearing
-    $('#username').keyup(function () {
-        $('#errUsername').text("");
-    });
-    $('#password').keyup(function () {
-        $('#errPassword').text("");
-    });
-    $('#name').keyup(function () {
-        $('#errName').text("");
-    });
-    $('#session').keyup(function () {
-        $('#errSession').text("");
-    });
-    $('#reg').keyup(function () {
-        $('#errReg').text("");
-    });
-    $('#roll').keyup(function () {
-        $('#errRoll').text("");
-    });
-    $('#passingYear').keyup(function () {
-        $('#errPassingYear').text("");
-    });
-    $('#email').keyup(function () {
-        $('#errEmail').text("");
-    });
+    errFieldClearing();
 
     // add button click function
     $('#add, #addPlus').click(function () {
@@ -80,7 +57,127 @@ $(document).ready(function () {
             $('#searchRow').css('display', 'none');
         }
     });
+
+    // search/filter options
+    filter();
 });
+
+// keyup filtering
+function filter() {
+    $('#nameSearch').keyup(function () {
+        let filterKey = $('#nameSearch').val().toUpperCase();
+        let colNum = 3;
+        doFilter(filterKey, colNum);
+    });
+
+    $('#sessionSearch').keyup(function () {
+        let filterKey = $('#sessionSearch').val().toUpperCase();
+        let colNum = 4;
+        doFilter(filterKey, colNum);
+    });
+
+    $('#regSearch').keyup(function () {
+        let filterKey = $('#regSearch').val().toUpperCase();
+        let colNum = 5;
+        doFilter(filterKey, colNum);
+    });
+
+    $('#rollSearch').keyup(function () {
+        let filterKey = $('#rollSearch').val().toUpperCase();
+        let colNum = 6;
+        doFilter(filterKey, colNum);
+    });
+
+    $('#yearSearch').keyup(function () {
+        let filterKey = $('#yearSearch').val().toUpperCase();
+        let colNum = 7;
+        doFilter(filterKey, colNum);
+    });
+
+    $('#phoneSearch').keyup(function () {
+        let filterKey = $('#phoneSearch').val().toUpperCase();
+        let colNum = 8;
+        doFilter(filterKey, colNum);
+    });
+
+    $('#emailSearch').keyup(function () {
+        let filterKey = $('#emailSearch').val().toUpperCase();
+        let colNum = 9;
+        doFilter(filterKey, colNum);
+    });
+}
+
+// calling filter func with resetting serial
+function doFilter(filterKey, colNum) {
+    filterRaw(filterKey, colNum);
+    resetSerial();
+    removeOtherFilter(colNum);
+}
+
+// removing other filter key
+function removeOtherFilter(colNum) {
+    $('#searchRow').find('th').each(function (index, td) {
+        if (index + 1 != colNum) {
+            $(td).find('input').val("");
+        }
+    });
+}
+
+// filter/search
+function filterRaw(filterKey, colNum) {
+    // Loop through all tr items, and hide those who don't match the search query
+    $('tbody tr').each(function () {
+        let tdValue = $(this).find("td:eq(" + colNum + ")").text();
+
+        if (tdValue.toUpperCase().indexOf(filterKey) > -1) {
+            $(this).css('display', '');
+        } else {
+            $(this).css('display', 'none');
+        }
+    });
+}
+
+// resetting serial after searching
+function resetSerial() {
+    let idx = 1;
+    $('tbody tr').each(function () {
+        let serial = justifySerial(idx);
+
+        if ($(this).css('display') != 'none') {
+            $(this).find("td:eq(1)").text(serial);
+            idx++;
+        }
+    });
+}
+
+// error field clearing
+function errFieldClearing() {
+    $('#username').keyup(function () {
+        $('#errUsername').text("");
+    });
+    $('#password').keyup(function () {
+        $('#errPassword').text("");
+    });
+    $('#name').keyup(function () {
+        $('#errName').text("");
+    });
+    $('#session').keyup(function () {
+        $('#errSession').text("");
+    });
+    $('#reg').keyup(function () {
+        $('#errReg').text("");
+    });
+    $('#roll').keyup(function () {
+        $('#errRoll').text("");
+    });
+    $('#passingYear').keyup(function () {
+        $('#errPassingYear').text("");
+    });
+    $('#email').keyup(function () {
+        $('#errEmail').text("");
+    });
+}
+
 
 // edit icon click function
 function editItem(item) {
@@ -370,12 +467,8 @@ function displayList(list) {
 
         // adding new rows
         for (let i = 0; i < list.length; i++) {
-            let serial = "", sn = i + 1;
-            if (sn < 10) {
-                serial = "00" + sn.toString();
-            } else if (sn < 100) {
-                serial = "0" + sn.toString();
-            }
+            let sn = i + 1;
+            let serial = justifySerial(sn);
 
             let avatarURL = "../assets/images/avatar.png"   //blank avatar link
             if (list[i].avatarURL.length > 0) {
@@ -404,4 +497,17 @@ function displayList(list) {
             $('#table').append(tableData);
         }
     }
+}
+
+function justifySerial(sn) {
+    let serial = "";
+    if (sn < 10) {
+        serial = "00" + sn.toString();
+    } else if (sn < 100) {
+        serial = "0" + sn.toString();
+    } else {
+        serial = sn;
+    }
+
+    return serial;
 }

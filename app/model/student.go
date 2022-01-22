@@ -33,7 +33,7 @@ func GetAllStudents() ([]Student, error) {
 
 	var students []Student
 	opts := options.Find()
-	opts.SetSort(bson.D{{Key: "name", Value: 1}}) //sorting by totalSolved & then OJ/user name
+	opts.SetSort(bson.D{{Key: "name", Value: 1}})
 	cursor, err := studentCollection.Find(ctx, bson.M{}, opts)
 	if err != nil {
 		return nil, err

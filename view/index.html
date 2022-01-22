@@ -73,34 +73,39 @@
                     </tr>
                     <tr id="searchRow" style="display: none;">
                         <th class="py-0">
-                            <div id="sort" class="btnMain">
+                            <input type="text" disabled>
+                            <!-- <div id="sort" class="btnMain">
                                 <img src="../assets/images/sort.png" alt="" srcset="">
-                            </div>
-                        </th>
-                        <th></th>
-                        <th class="py-0">
-                            <input type="text" name="">
+                            </div> -->
                         </th>
                         <th class="py-0">
-                            <input type="text" name="">
+                            <input type="text" disabled>
                         </th>
                         <th class="py-0">
-                            <input type="text" name="">
+                            <input type="text" id="nameSearch">
                         </th>
                         <th class="py-0">
-                            <input type="text" name="">
+                            <input type="text" id="sessionSearch">
                         </th>
                         <th class="py-0">
-                            <input type="text" name="">
+                            <input type="text" id="regSearch">
                         </th>
                         <th class="py-0">
-                            <input type="text" name="">
+                            <input type="text" id="rollSearch">
                         </th>
                         <th class="py-0">
-                            <input type="text" name="">
+                            <input type="text" id="yearSearch">
+                        </th>
+                        <th class="py-0">
+                            <input type="text" id="phoneSearch">
+                        </th>
+                        <th class="py-0">
+                            <input type="text" id="emailSearch">
                         </th>
                         {{ if .LoggedIn }}
-                        <th></th>
+                        <th class="py-0">
+                            <input type="text" disabled>
+                        </th>
                         {{ end }}
                     </tr>
                 </thead>
