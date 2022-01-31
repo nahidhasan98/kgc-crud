@@ -282,7 +282,7 @@ function addRequest() {
         $('#addSubmit').prop('disabled', true);
         $('#addSubmit').val("Adding...");
     } else if (todo == "Update") {
-        formArray.push({ name: 'id', value: $('#sid').text().trim() });
+        formArray.push({ name: 'id', value: parseInt($('#sid').text().trim()) });
         apiURL = "/api/student/" + $('#sid').text().trim();
         apiMethod = "PUT";
         responseMessageText = "updated";
