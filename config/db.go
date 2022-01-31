@@ -1,30 +1,42 @@
 package config
 
 import (
-	"context"
-	"time"
+	"database/sql"
+	"fmt"
 
-	"github.com/nahidhasan98/kgc-crud/errorhandling"
-	"go.mongodb.org/mongo-driver/mongo"
-	"go.mongodb.org/mongo-driver/mongo/options"
-	"go.mongodb.org/mongo-driver/mongo/readpref"
+	_ "github.com/mattn/go-sqlite3"
 )
 
-//Connect function for connenting to DB
-func DBConnect() (*mongo.Database, context.Context, context.CancelFunc) {
+// GetDB function for connenting to DB
+func GetDB() *sql.DB {
 	dbName := databaseName
 	dbConnectionString := databaseConnectionString
 
-	dbClient, err := mongo.NewClient(options.Client().ApplyURI(dbConnectionString))
-	errorhandling.Check(err)
+	db, err := sql.Open(dbConnectionString, "../"+dbName)
+	if err != nil {
+		fmt.Println("database connection error")
+		panic(err)
+	}
 
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-	err = dbClient.Connect(ctx)
-	errorhandling.Check(err)
+	return db
+}
 
-	err = dbClient.Ping(ctx, readpref.Primary())
-	errorhandling.Check(err)
+// DBInit function for creating table to DB
+func DBInit() {
+	db := GetDB()
+	defer db.Close()
 
-	//return db
-	return dbClient.Database(dbName), ctx, cancel
+	statement, err := db.Prepare("CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY, username TEXT, password TEXT)")
+	if err != nil {
+		fmt.Println("database initialization error")
+		panic(err)
+	}
+	statement.Exec()
+
+	statement, err = db.Prepare("CREATE TABLE IF NOT EXISTS student (id INTEGER PRIMARY KEY, name TEXT, email TEXT, phone TEXT, reg TEXT, session TEXT, roll TEXT, passingYear TEXT, avatarURL TEXT)")
+	if err != nil {
+		fmt.Println("database initialization error")
+		panic(err)
+	}
+	statement.Exec()
 }

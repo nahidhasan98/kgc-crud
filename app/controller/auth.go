@@ -1,7 +1,6 @@
 package controller
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/gin-contrib/sessions"
@@ -23,7 +22,6 @@ func Login(c *gin.Context) {
 
 	var user model.User
 	err := c.ShouldBindJSON(&user)
-	fmt.Println(user, err)
 	if err != nil {
 		c.JSON(http.StatusOK, &model.Response{
 			Status:  "error",
@@ -31,7 +29,6 @@ func Login(c *gin.Context) {
 		})
 		return
 	}
-	fmt.Println("here")
 
 	dbUser, err := model.Authenticate(&user)
 	if err != nil {

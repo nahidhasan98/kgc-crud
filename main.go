@@ -20,6 +20,7 @@ func main() {
 
 	r := gin.Default()
 	cookieInit(r)
+	config.DBInit()
 
 	r.LoadHTMLGlob("view/*")
 	r.Static("/assets", "./assets")
