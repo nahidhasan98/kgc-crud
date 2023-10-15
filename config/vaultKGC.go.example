@@ -1,9 +1,9 @@
 package config
 
 var (
-	databaseName             string = "kgc.db"
-	databaseConnectionString string = "sqlite3"
-	CookieSecretKey          string = "my$kgc$Cookie$secret"
+	databaseName             string = "databaseName"
+	databaseConnectionString string = "databaseConnectionString"
+	CookieSecretKey          string = "CookieSecretKey"
 )
 
 // bytes, err := bcrypt.GenerateFromPassword([]byte("mod@abir"), 14)
