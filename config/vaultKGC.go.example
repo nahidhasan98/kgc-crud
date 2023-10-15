@@ -1,15 +1,12 @@
 package config
 
 var (
-	databaseName             string
-	databaseConnectionString string
-
-	CookieSecretKey string
+	databaseName             string = "kgc.db"
+	databaseConnectionString string = "sqlite3"
+	CookieSecretKey          string = "my$kgc$Cookie$secret"
 )
 
-func init() {
-	databaseName = "DBName"
-	databaseConnectionString = "DBConnectionString"
-
-	CookieSecretKey = "CookieSecretKey"
-}
+// bytes, err := bcrypt.GenerateFromPassword([]byte("mod@abir"), 14)
+// errorhandling.Check(err)
+// fmt.Println("_id=", uuid.NewString())
+// fmt.Println("pass=", string(bytes))

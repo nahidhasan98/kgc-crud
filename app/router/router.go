@@ -18,4 +18,8 @@ func CreateRoute(router *gin.Engine) {
 	studentRG.POST("/student", controller.CreateStudent)
 	studentRG.PUT("/student/:id", controller.UpdateStudent)
 	studentRG.DELETE("/student/:id", controller.DeleteStudent)
+
+	// temp cric api
+	router.GET("/getshortscore", controller.GetShortScore)
+	router.GET("/getlongscore", controller.GetLongScore)
 }
